@@ -1,13 +1,113 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
+:root {
+  --main-color: #0aad0a;
+  --light-color: #f0f3f2;
+  --shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+    rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+    rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+  --font-family: "Encode Sans Expanded", sans-serif;
+  --rating-color: #ffc908;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: var(--font-family) !important;
+}
+.rating-color {
+  color: var(--rating-color);
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+a,
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+.product:hover {
+  box-shadow: var(--shadow);
+  border: solid 1px var(--main-color);
+}
+.product button {
+  --bs-btn-padding-x: 1rem;
+  --bs-btn-padding-y: 0.1rem;
+  transition: transform 1s, opacity 1s;
+  transform: translateY(100%);
+  opacity: 0;
+}
+.product:hover button {
+  opacity: 1;
+  transform: translateY(0%);
+}
+.font-sm {
+  font-size: 14px;
+}
+.text-main {
+  color: var(--main-color);
+}
+.bg-main {
+  background-color: var(--main-color) !important;
+}
+.bg-main-light {
+  background-color: var(--light-color) !important;
+}
+.myBorder {
+  border: 1px solid #0aad0a;
+}
+
+/* mf */
+
+.navbar {
+  position: fixed;
+  right: 0;
+  left: 0;
+  min-height: 75px;
+  z-index: 9999999999;
+}
+
+.view {
+  padding-top: 75px;
+  min-height: calc(100vh - 75px);
+}
+
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 991px) {
+  .nav-link {
+    display: block;
+    margin: auto;
+    width: fit-content;
+    margin-block: 8px;
+  }
+  .carts {
+    margin-top: 15px;
+  }
+}
+
+.form-control:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: #0aad0a;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem #0aad0a33;
+}
+::selection {
+  background-color: #3fa93fba;
+}
+
+.offline {
+  position: fixed;
+  top: 50%;
+  z-index: 999999;
+  background-color: #0aad0a;
+  color: white;
+  padding: 10px 20px;
 }
